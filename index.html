@@ -1,68 +1,113 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Json Server</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-
+<head>
+  <link rel="stylesheet" href="https://fonts.googgleapis.com/css?family=Open+Sans:400,400i,700">
+  <link rel="stylesheet" href="https://fonts.googgleapis.com/icon?family=Material+Icons" >
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <title>Responsive Made easy</title>
+</head>
 <body>
-
-    <div class="container mx-auto">
-
-        <h1 class="text-center text-4xl text-indigo-400 py-12">Json Server</h1>
-        <div class="flex items-center">
-            <button id='active'class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Active</button>
-            <button id='inactive' class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Inactive</button>
-            <button id="name" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</button>
-            <button  id="status" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">status</button>
-            <button  id="role"  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">role</button>
-            <button id = " id"class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">id</button>
-
-        </div>
-
-        <table class="min-w-full divide-y divide-gray-200">
-
-            <thead class="bg-gray-50">
-                <tr>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Employee</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">status</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
-
-                </tr>
-
-            </thead>
-
-            <tbody class="bg-white divide-y divide-gray-200 " id="tbody">
-
-                <tr>
-                    <!-- <td class="px-6 py-4 whitespace-nowrap">
-                     <div class="flex items-center">
-                        <div class="flex-shrink-0 h-10 w-10">
-                            <img src="https://s.alamy.com/kdawwlsweh27/2LtummpjO849eQ83yGGiUN/b33c73279163c84b65241cdfcc1c8844/Fresh_Stock_Content.jpg?fm=jpg&q=100" class="h-10 w-10 rounded-full">
-                        </div>
-                        <div class="ml-4">
-                            <div class="text-sm font-medium text-gray-900">
-                                Jane Cooper
-                            </div>
-                            <div class="text-sm text-gray-500">
-                                jane.cooper@example.com
-                            </div>
-                        </div>
-                     </div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap">
-                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                            Active Status
-                        </span>
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap">
-                        <span class="text-sm text-gray-500 ">Admin</span>
-                    </td> -->
-                </tr>
-            </tbody>
-        </table>
+    <div class="navbar">
+        <ul>
+            <li><svg width="24" height="24" viewBox="0 0 24 24">
+                <path  d="M25 25H19.9956C19.6596 24.9997 19.3261 24.9655 
+                19 24.899C18.368 24.77 17.7637 24.5192 17.2222 24.1573C16.3999 23.6079
+                 15.759 22.8271 15.3806 21.9134C15.2579 21.6171 15.1645 21.3112 15.101
+                  21C14.9686 20.3515 14.9657 19.6799 15.0961 19.0245C15.289 18.0546 15.7652
+                   17.1637 16.4645 16.4645C17.1637 15.7652 18.0546 15.289 19.0245 15.0961C19.0549 
+                   15.09 19.0852 15.0843 19.1156 15.0788C19.4087 15.0262 19.7047 15 20 15C20.6535 
+                   15 21.3038 15.1281 21.9134 15.3806C22.827 15.759 23.6079 16.3999
+                    24.1573 17.2221C24.7068 18.0444 25 19.0111 25 20H21C21 19.8022 20.9414
+                     19.6089 20.8315 19.4444C20.7216 19.28 20.5654 19.1518 20.3827 19.0761C20.2 
+                     19.0004 19.9989 18.9806 19.8049 19.0192C19.6109 19.0578 19.4327 19.153 19.2929 
+                     19.2929C19.153 19.4327 19.0578 19.6109 19.0192 19.8049C18.9806 19.9989 19.0004 
+                     20.2 19.0761 20.3827C19.1518 20.5654 19.28 20.7216 19.4444 20.8315C19.6089 
+                     20.9414 19.8022 21 20 21H25C25.1313 21 25.2614 20.9741 25.3827 20.9239C25.504
+                      20.8736 25.6142 20.8 25.7071 20.7071C25.8 20.6142 25.8736 20.504 25.9239 
+                      20.3827C25.9741 20.2614 26 20.1313 26 20C26 18.4087 25.3679 16.8826 24.2426
+                       15.7574C23.1174 14.6321 21.5913 14 20 14C19.8274 14 19.6556 14.0074 19.485 
+                       14.0221C19.0657 14.0582 18.6535 14.1382 18.255 14.2594C17.8629 14.3785 
+                       17.484 14.5376 17.1243 14.734C16.7123 14.959 16.3255 15.233 15.973 
+                       15.5522C15.8996 15.6186 15.8277 15.687 15.7574 15.7574C15.2651 16.2496
+                        14.8672 16.8187 14.5753 17.4363C14.4294 17.7451 14.3099 18.066 14.2185 
+                        18.3956C14.1139 18.7724 14.0459 19.1604 14.0166 19.5544C14.0056 19.7022 
+                        14 19.8508 14 20C14 20.7841 14.1537 21.5646 14.4567 22.2961C14.9109 
+                        23.3925 15.6799 24.3295 16.6666 24.9888C16.6722 24.9926 16.6778 24.9963 
+                        16.6834 25H15C14.3434 25 13.6932 24.8707 13.0866 24.6194C12.48 24.3681 
+                        11.9288 23.9998 11.4645 23.5355C11.0002 23.0712 10.6319 22.52 10.3806 
+                        21.9134C10.1293 21.3068 10 20.6566 10 20C10 17.3478 11.0536 14.8043 
+                        12.9289 12.9289C14.8043 11.0536 17.3478 10 20 10C22.6522 10 25.1957 
+                        11.0536 27.0711 12.9289C28.9464 14.8043 30 17.3478 30 20C30 20.6566 
+                        29.8707 21.3068 29.6194 21.9134C29.3681 22.52 28.9998 23.0712 28.5355 
+                        23.5355C28.0712 23.9998 27.52 24.3681 26.9134 24.6194C26.3068 24.8707
+                         25.6566 25 25 25Z" fill="#3064E8"></path></svg>
+                </li>
+                <li>About</li>
+                <li>Work</li>
+                <li>Contact</li>
+        </ul>
     </div>
 
-    <script src="./index.js"></script>
+    <div id="wrapper-main">
+        <div class="header">
+            <h1>Page Header</h1>
+            <div id="search">
+                <span class="material-icons">search</span>
+                Search
+            </div>
+        </div>
+
+        <div id="wrapper-grid">
+
+            <div class="container">
+                <p class="date">July 20, 2020</p>
+                <h2>Header</h2>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                 sed do eiusmod tempor incididunt ut labore et dolore magna 
+                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                 laboris nisi ut aliquip ex ea commodo consequat
+            </div>
+            <div class="container">
+                <p class="date">July 20, 2020</p>
+                <h2>Header</h2>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                 sed do eiusmod tempor incididunt ut labore et dolore magna 
+                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                 laboris nisi ut aliquip ex ea commodo consequat
+            </div>
+            <div class="container">
+                <p class="date">July 20, 2020</p>
+                <h2>Header</h2>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                 sed do eiusmod tempor incididunt ut labore et dolore magna 
+                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                 laboris nisi ut aliquip ex ea commodo consequat
+            </div>
+            <div class="container">
+                <p class="date">July 20, 2020</p>
+                <h2>Header</h2>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                 sed do eiusmod tempor incididunt ut labore et dolore magna 
+                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                 laboris nisi ut aliquip ex ea commodo consequat
+            </div>
+            <div class="container">
+                <p class="date">July 20, 2020</p>
+                <h2>Header</h2>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                 sed do eiusmod tempor incididunt ut labore et dolore magna 
+                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                 laboris nisi ut aliquip ex ea commodo consequat
+            </div>
+            <div class="container">
+                <p class="date">July 20, 2020</p>
+                <h2>Header</h2>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                 sed do eiusmod tempor incididunt ut labore et dolore magna 
+                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                 laboris nisi ut aliquip ex ea commodo consequat
+            </div>
+        </div>
+    </div>
 </body>
 </html>
