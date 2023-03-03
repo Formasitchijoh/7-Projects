@@ -1,1 +1,1 @@
-# 7-Projects projects to build in react
+# 7-Projects projects ideas  to build in react js
